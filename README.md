@@ -4,29 +4,29 @@
 
 ## Getting Started
 
-We will use a free API service called [Finnhub](https://finnhub.io/); it is necessary to generate your API Key for this purpose.
+You will use a free API service called [Finnhub](https://finnhub.io/); you will need to generate an API Key for this purpose.
 
-**But it isn't necessary to share it.**
+**When you submit your test you do not need to share your private key with us.**
 
 ## Recommendations
 
 **About your process**
 
-If the assignment outcome will be shared in a git versioned repository, it is recommended to share its progress through commit history. This helps us get to know your process.
+If your share your assignment from a git repository, please maintain your commit history. This will help us see your process.
 
 **About the project design strategy**
 
-You can use your own _(MVC, MVP, MVVM, etc)_. It is good to start easy and then make the refinements to reach your desired structure and outcome.
+You can use your own strategy or one of the following if you chose _(MVC, MVP, MVVM, etc)_. It is good idea to start easy and then make any refinements to reach the desired structure and outcome.
 
 **About the state management**
 
-You can choose any of them _(Lift state, ChangeNotifier, provider, BLoC, bloc, rxDart, etc)_, this assignment might not be the best case to implement any of them, but it shouldn't hold you from showing your beloved states.
+Again, you can use your own state management or one of the following _(Lift state, ChangeNotifier, provider, BLoC, bloc, rxDart, etc)_. This assignment might not be the best case to implement any of them, but it shouldn't prevent you from showing off your beloved states skills!
 
 ## Explanation
 
-The assignment is about providing a two-way communication between the app and a provided `html` file mounted inside a webview.
+The assignment is about creating a two-way communication between the app and a webview mounting the provided `html` file.
 
-We will be connecting to the [Websocket Trades](https://finnhub.io/docs/api/websocket-trades) service from Finnhub, and send the retrieved Stock updates from the application to the webview.
+You will be connecting to the [Websocket Trades](https://finnhub.io/docs/api/websocket-trades) service from Finnhub, and send the retrieved Stock updates from the application to the webview.
 
 ## Sequence Diagram
 
@@ -34,11 +34,11 @@ We will be connecting to the [Websocket Trades](https://finnhub.io/docs/api/webs
 
 ## Step by step
 
-- Store all app strings in clean way of your choice
+- Store all app strings in a clean way of your choice
 - Add a MaterialApp with an appBar with the following title: "CM Flutter Assignment"
 - Setup a webview to load the html file located in `/assets/app.html`
 - Create a channel called `appMessageHandler` to receive messages from the website
-- Add support for sending messages to the website through `nativeMessageHandler` function. It receives the following argument:
+- Add support for sending messages to the website through the `nativeMessageHandler` function in provided html file. It has the following signature:
 
 ```
   nativeMessageHandler({
@@ -63,8 +63,8 @@ We will be connecting to the [Websocket Trades](https://finnhub.io/docs/api/webs
 
 The following steps are not required to complete the assignment but add some value:
 
-- Add a Floating Action Button with a refresh icon, whenever it is actioned it will send updates to the webview, meaning that all the updates will be stored in the app until the button is hit.
-  The following action can reset the content of the website:
+- Add a Floating Action Button with a refresh icon. Whenever it is clicked it will send updates to the webview, meaning that all the updates will be stored in the app until the button is clicked.
+  The following action can be used to reset the content of the website:
 
 ```
   nativeMessageHandler({
@@ -72,6 +72,14 @@ The following steps are not required to complete the assignment but add some val
   });
 ```
 
-- Move the socket listening to a new isolate, and send data only when the Action button is hit.
+- Move the socket listening to a new isolate, and send data only when the Action button is clicked.
+
+## You do not need to send your API Key, we will use our own
+
+## Please send us your test either through a git repository link or a zip file if you feel that is appropriate.
+
+## If you have any questions please be sure to contact us for clarity.
+
+
 
 

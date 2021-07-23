@@ -28,7 +28,7 @@ We will be connecting to the [Websocket Trades](https://finnhub.io/docs/api/webs
 
 ## Sequence Diagram
 
-<img src=".github/assignment sequence.png" width="500">
+<img src=".github/assignment_sequence.png" width="500">
 
 ## Step by step
 

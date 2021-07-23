@@ -1,5 +1,7 @@
 # CarbManager Flutter Assignment
 
+<img src=".github/assignment_preview.png" width="350">
+
 ## Getting Started
 
 We will use a free API service called [Finnhub](https://finnhub.io/); it is necessary to generate your API Key for this purpose.

@@ -39,16 +39,21 @@ We will be connecting to the [Websocket Trades](https://finnhub.io/docs/api/webs
 - Setup a webview to load the html file located in `/assets/app.html`
 - Create a channel called `appMessageHandler` to receive messages from the website
 - Add support for sending messages to the website through `nativeMessageHandler` function. It receives the following argument:
+
 ```
-  nativeMessageHandler([
-    {
-      lastPrice: num;
-      name: string;
-      timestamp: DateFormat('MM/dd/yyyy - hh:mm a');
-      volume: num;
-    }
-  ]);
+  nativeMessageHandler({
+    action: 'APP_UPDATE_DATA',
+    data: [
+      {
+        lastPrice: num;
+        name: string;
+        timestamp: DateFormat('MM/dd/yyyy - hh:mm a');
+        volume: num;
+      }
+    ]
+  });
 ```
+
 - Setup and connect to `wss://ws.finnhub.io` websocket, providing it a configurable token (https://finnhub.io/docs/api/websocket-trades)
 - Subscribe to a minimum of 5 symbols (you can search symbols here https://finnhub.io/docs/api/symbol-search)
 - Listen to messages and send updates to the webview
@@ -59,6 +64,14 @@ We will be connecting to the [Websocket Trades](https://finnhub.io/docs/api/webs
 The following steps are not required to complete the assignment but add some value:
 
 - Add a Floating Action Button with a refresh icon, whenever it is actioned it will send updates to the webview, meaning that all the updates will be stored in the app until the button is hit.
+  The following action can reset the content of the website:
+
+```
+  nativeMessageHandler({
+    action: 'APP_RESET',
+  });
+```
+
 - Move the socket listening to a new isolate, and send data only when the Action button is hit.
 
 
